@@ -1,42 +1,36 @@
-import menu1Sidebar from "./menu1Sidebar";
-import menu2Sidebar from "./menu2Sidebar";
-import menu3Sidebar from "./menu3Sidebar";
+import deploySidebar from './deploySidebar'
+import middlewareSidebar from './middlewareSidebar'
+import devSidebar from './devSidebar'
+import linuxSidebar from './linuxSidebar'
+import aboutSidebar from './aboutSidebar'
 
 export default {
     base: '/',
-
-    title: '运维', // 所有文档的浏览器标签title
-    description: '氧化氢的网站', // 会渲染成<meta>标签，SEO用
-
+    title: '运维文档', // 所有文档的浏览器标签title
+    description: '运维文档', // 会渲染成<meta>标签，SEO用
     themeConfig: {
-
-        siteTitle: '氧化氢的网站',
+        siteTitle: '运维文档',
         logo: '/logo.png',
-
-
         nav: [
-            { text: '菜单1', link: '/menu1/', activeMatch: '/menu1/' },
-            { text: '菜单2', link: '/menu2/', activeMatch: '/menu2/' },
-            { text: '菜单3', link: '/menu3/', activeMatch: '/menu3/' },
+            { text: '部署', link: '/deploy/', activeMatch: '/deploy/' },
+            { text: '中间件', link: '/middleware/', activeMatch: '/middleware/' },
+            { text: '开发环境', link: '/dev/', activeMatch: '/dev/' },
+            { text: 'Linux', link: '/linux/', activeMatch: '/linux/' },
+            { text: '关于', link: '/about/', activeMatch: '/about/' }
         ],
-
         sidebar: {
-            '/menu1/': menu1Sidebar,
-            '/menu2/': menu2Sidebar,
-            '/menu3/': menu3Sidebar,
+            '/deploy/': deploySidebar,
+            '/middleware/': middlewareSidebar,
+            '/dev/': devSidebar,
+            '/linux/': linuxSidebar,
+            '/about/': aboutSidebar
         },
-
-
         socialLinks: [
-            { icon: 'github', link: 'https://github.com/vuejs/vitepress' },
-            { icon: 'twitter', link: '...' },
-            { icon: 'discord', link: '...' }
+            { icon: 'github', link: 'https://github.com/wmh1024/yunweidocs' }
         ],
-
-
         footer: {
             message: 'Released under the MIT License.',
-            copyright: 'Copyright © 2022-present feiye'
-        },
+            copyright: 'Copyright © 2024'
+        }
     }
 }
