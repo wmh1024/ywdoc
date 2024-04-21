@@ -5,7 +5,7 @@ import menu3Sidebar from "./menu3Sidebar";
 export default {
     base: '/',
 
-    title: '氧化氢', // 所有文档的浏览器标签title
+    title: '运维', // 所有文档的浏览器标签title
     description: '氧化氢的网站', // 会渲染成<meta>标签，SEO用
 
     themeConfig: {
