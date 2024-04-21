@@ -6,6 +6,7 @@ import aboutSidebar from './aboutSidebar'
 
 export default {
     base: '/',
+    lang: 'zh-CN',
     title: '运维文档', // 所有文档的浏览器标签title
     description: '运维文档', // 会渲染成<meta>标签，SEO用
     themeConfig: {
@@ -32,5 +33,16 @@ export default {
             message: 'Released under the MIT License.',
             copyright: 'Copyright © 2024'
         }
-    }
+    },
+    head: [
+        [
+            'script',
+            { charset: 'UTF-8', id: 'LA_COLLECT', src: '//sdk.51.la/js-sdk-pro.min.js' }
+        ],
+        [
+            'script',
+            {},
+            `LA.init({ id: "3IBN50LSNvZUP11Q", ck: "3IBN50LSNvZUP11Q" })`
+        ]
+    ]
 }
