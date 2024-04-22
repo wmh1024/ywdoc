@@ -20,7 +20,7 @@ const members = [
     ]
   },
   {
-    avatar: 'https://www.github.com/ljx619.png',
+    avatar: 'https://ywdoc-1306153177.cos.ap-shanghai.myqcloud.com/2024/04/22/66265f9a658ba.png',
     name: 'ljx619',
     title: 'Developer',
     links: [
