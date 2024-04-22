@@ -2,51 +2,137 @@
 
 ## 安装 Docker
 
-### yum安装
+### CentOS
+
+#### 操作系统要求
+
+若要安装 Docker 引擎，需要以下项之一的维护版本 CentOS 版本：
+
+- CentOS 7 
+- CentOS 8 （stream）
+- CentOS 9 （stream）
+
+#### 卸载旧版本
 
 ```shell
-yum -y install yum-utils device-mapper-persistent-data lvm2
-yum-config-manager --add-repo http://mirrors.aliyun.com/docker-ce/linux/centos/docker-ce.repo
-yum makecache fast
-yum -y install docker-ce
+sudo yum remove docker \
+                  docker-client \
+                  docker-client-latest \
+                  docker-common \
+                  docker-latest \
+                  docker-latest-logrotate \
+                  docker-logrotate \
+                  docker-engine
 ```
 
-### 更换国内镜像源
+#### 安装方法
 
-创建 `daemon.json` 文件
+##### 使用rpm存储库安装
+
+设置存储库
+
+安装软件包（提供实用程序）并设置存储库。`yum-utils``yum-config-manager`
 
 ```shell
-touch /etc/docker/daemon.json
+#安装Docker所需要的一些工具包
+sudo yum install -y yum-utils
+#建立Docker仓库地址（映射仓库地址）
+sudo yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
 ```
 
-打开并添加镜像源
+安装Docker引擎
+
+1.安装 Docker Engine、containerd 和 Docker Compose：
+
+最新版本：
 
 ```shell
-vim /etc/docker/daemon.json
+sudo yum install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
 ```
 
-```json
-{
-    "registry-mirrors" : [
-    "https://registry.docker-cn.com",
-    "http://hub-mirror.c.163.com",
-    "https://docker.mirrors.ustc.edu.cn",
-    "https://cr.console.aliyun.com",
-    "https://mirror.ccs.tencentyun.com"
-  ]
-}
-```
-::: tip vim 保存并退出
-1. 先按下 `Esc`，输入 `:wq!`。
-2. 先按下 `Esc`，再按住 `Shift` 后，按两次 `z` 。
-:::
-
-重启 Docker 服务
+2.启动Docker
 
 ```shell
-systemctl daemon-reload
-systemstl restart docker.service
+sudo systemctl start docker
 ```
+
+3.通过运行映像来验证 Docker 引擎安装是否成功。`hello-world`
+
+```shell
+sudo docker run hello-world
+```
+
+此命令下载测试映像并在容器中运行它。当 容器运行，它打印确认消息并退出。
+
+现在，您已成功安装并启动 Docker 引擎。
+
+### Ubuntu
+
+#### 操作系统要求
+
+要安装 Docker 引擎，您需要以下 Ubuntu 之一的 64 位版本 版本：
+
+- Ubuntu Mantic 23.10
+- Ubuntu Jammy 22.04 （LTS）
+- Ubuntu Focal 20.04 （LTS）
+
+#### 卸载旧版本
+
+再安装Docker引擎之前，需要卸载任何冲突的包
+
+要卸载的非官方软件包有：
+
+- `docker.io`
+- `docker-compose`
+- `docker-compose-v2`
+- `docker-doc`
+- `podman-docker`
+
+运行以下命令以卸载所有冲突的包：
+
+```shell
+for pkg in docker.io docker-doc docker-compose docker-compose-v2 podman-docker containerd runc; do sudo apt-get remove $pkg; done
+```
+
+#### 安装方法
+
+##### 使用apt存储库安装
+
+1.设置Docker的存储库
+
+```shell
+# 添加Docker的官方GPG密钥:
+sudo apt-get update
+sudo apt-get install ca-certificates curl
+sudo install -m 0755 -d /etc/apt/keyrings
+sudo curl -fsSL https://download.docker.com/linux/ubuntu/gpg -o /etc/apt/keyrings/docker.asc
+sudo chmod a+r /etc/apt/keyrings/docker.asc
+
+# 将存储库添加到apt源:
+echo \
+  "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.asc] https://download.docker.com/linux/ubuntu \
+  $(. /etc/os-release && echo "$VERSION_CODENAME") stable" | \
+  sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+sudo apt-get update
+```
+
+2.安装Docker包
+
+最新版本：
+
+```shell
+sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+```
+
+3.通过运行映像来验证 Docker 引擎安装是否成功。`hello-world`
+
+```shell
+sudo docker run hello-world
+```
+
+此命令下载测试映像并在容器中运行它。当 容器运行，它打印确认消息并退出。
+
+现在，您已成功安装并启动 Docker 引擎。
 
 ## Docker 常用命令
 
@@ -66,6 +152,7 @@ docker exec -i -t [container-id] /bin/bash
 # 查看日志
 docker logs -f [container-id]
 ```
+
 
 ## 制作 Docker 镜像
 
