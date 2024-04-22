@@ -11,7 +11,8 @@
     "deploy": "bash deploy.sh"
   },
   "devDependencies": {
+    "sass": "^1.75.0",
     "vitepress": "^1.0.0-alpha.4",
-    "vue": "^3.2.37"
+    "vue": "^3.4.23"
   }
 }
