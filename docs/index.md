@@ -19,18 +19,18 @@ hero:
     alt: VitePress
     
 features:
-  - icon: 📝
-    title: 详细的按照教程
-    details: 图文并茂的教程，让你在开发和生产时不走弯路。让您的学习更轻松。
-  - icon: 🚄
-    title: 提高您的效率
-    details: 通过简单的指导和易用的工具，让安装和部署变得更加简单快捷。只需几分钟学会运维操作。
   - icon: 🚀
-    title: Power of Vue meets Markdown
-    details: Enhance your content with all the features of Vue in Markdown, while being able to customize your site with Vue.
-  - icon: 🔥
-    title: Fully static yet still dynamic
-    details: Go wild with true SSG + SPA architecture. Static on page load, but engage users with 100% interactivity from there.
+    title: 简单易用
+    details: 文档结构清晰，步骤明确，让您可以轻松跟随指引完成部署。
+  - icon: 📝
+    title: 全面覆盖
+    details: 涵盖了各种不同类型的应用程序部署文档，无论是网站、移动应用还是后端服务，我们都有相关的部署指南。
+  - icon: 💡
+    title: 开源共享
+    details: 文档是开源的，任何人都可以免费使用和贡献。欢迎您加入我们的社区，一起完善文档，分享经验。
+  - icon: 🌈
+    title: 不断更新
+    details: 会定期更新文档，保持与最新技术和最佳实践的同步，确保您始终能够得到最新的部署信息
 ---
 
 <style>
