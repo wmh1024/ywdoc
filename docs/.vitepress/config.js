@@ -8,10 +8,43 @@ export default {
     lang: 'zh-CN',
     title: '运维文档', // 所有文档的浏览器标签title
     description: '运维文档', // 会渲染成<meta>标签，SEO用
+    lastUpdated: true,
     themeConfig: {
         siteTitle: '运维文档',
         logo: '/logo.png',
         i18nRouting: false,
+        //上次更新时间
+        lastUpdated: {
+            text: '最后更新于',
+            formatOptions: {
+                dateStyle: 'short',
+                timeStyle: 'short'
+            }
+        },
+        //本地搜索
+        search: {
+            provider: 'local',
+            options: {
+                locales: {
+                    root: {
+                        translations: {
+                            button: {
+                                buttonText: '搜索文档',
+                                buttonAriaLabel: '搜索文档'
+                            },
+                            modal: {
+                                noResultsText: '无法找到相关结果',
+                                resetButtonTitle: '清除查询条件',
+                                footer: {
+                                    selectText: '选择',
+                                    navigateText: '切换'
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
         nav: [
             { text: '部署', link: '/deploy/', activeMatch: '/deploy/' },
             { text: '中间件', link: '/middleware/', activeMatch: '/middleware/' },
@@ -23,7 +56,7 @@ export default {
             '/deploy/': deploySidebar,
             '/middleware/': middlewareSidebar,
             '/dev/': devSidebar,
-            '/linux/': linuxSidebar,
+            '/linux/': linuxSidebar
         },
         socialLinks: [
             { icon: 'github', link: 'https://github.com/wmh1024/yunweidocs' }
@@ -57,7 +90,8 @@ export default {
             level: [2, 3],
             label: '目录'
         }
-    },
+    }
+    ,
     head: [
         [
             'script',
