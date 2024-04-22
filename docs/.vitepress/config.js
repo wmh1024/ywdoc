@@ -52,7 +52,13 @@ export default {
         //手机端深浅模式文字修改
         darkModeSwitchLabel: '主题',
         lightModeSwitchTitle: '切换到浅色模式',
-        darkModeSwitchTitle: '切换到深色模式'
+        darkModeSwitchTitle: '切换到深色模式',
+
+        //大纲显示2-3级标题
+        outline: {
+            level: [2, 3],
+            label: '目录'
+        }
     },
     head: [
         [

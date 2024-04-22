@@ -2,22 +2,29 @@ const commonPath = '/deploy';
 
 export default [
     {
-        text: 'section 1',
+        text: '前端',
         collapsible: true,
         collapsed: false,
         items: [
             // This shows `/guide/index.md` page.
-            { text: 'a', link: `${commonPath}/a.md` }, // /guide/index.md
-            { text: 'b', link: `${commonPath}/b.md` }, // /guide/one.md
+            { text: 'Nginx', link: `${commonPath}/nginx.md` },
         ]
     },
     {
-        text: 'section 2',
+        text: '后端',
         collapsible: true,
         collapsed: false,
         items: [
-            { text: 'c', link: `${commonPath}/c.md` },
-            { text: 'd', link: `${commonPath}/d.md` } // /guide/one.md
+            { text: 'Java', link: `${commonPath}/java.md` },
+        ]
+    },
+    {
+        text: '容器',
+        collapsible: true,
+        collapsed: false,
+        items: [
+            { text: 'Docker', link: `${commonPath}/docker.md` },
+            { text: '容器平台', link: `${commonPath}/container.md` } // /guide/one.md
         ]
     }
 ]
