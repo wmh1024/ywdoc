@@ -2,6 +2,52 @@
 
 ## 安装 Docker
 
+### yum安装
+
+```shell
+yum -y install yum-utils device-mapper-persistent-data lvm2
+yum-config-manager --add-repo http://mirrors.aliyun.com/docker-ce/linux/centos/docker-ce.repo
+yum makecache fast
+yum -y install docker-ce
+```
+
+### 更换国内镜像源
+
+创建 `daemon.json` 文件
+
+```shell
+touch /etc/docker/daemon.json
+```
+
+打开并添加镜像源
+
+```shell
+vim /etc/docker/daemon.json
+```
+
+```json
+{
+    "registry-mirrors" : [
+    "https://registry.docker-cn.com",
+    "http://hub-mirror.c.163.com",
+    "https://docker.mirrors.ustc.edu.cn",
+    "https://cr.console.aliyun.com",
+    "https://mirror.ccs.tencentyun.com"
+  ]
+}
+```
+::: tip vim 保存并退出
+1. 先按下 `Esc`，输入 `:wq!`。
+2. 先按下 `Esc`，再按住 `Shift` 后，按两次 `z` 。
+:::
+
+重启 Docker 服务
+
+```shell
+systemctl daemon-reload
+systemstl restart docker.service
+```
+
 ## Docker 常用命令
 
 ```shell
