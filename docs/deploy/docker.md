@@ -2,6 +2,25 @@
 
 ## 安装 Docker
 
+## Docker 常用命令
+
+```shell
+# 杀死容器
+docker kill [container-id]
+
+# 强制删除镜像
+docker rmi -f [container-id]
+
+# 查看进程
+docker ps
+
+# 进入容器
+docker exec -i -t [container-id] /bin/bash
+
+# 查看日志
+docker logs -f [container-id]
+```
+
 ## 制作 Docker 镜像
 
 ### Dockerfile
@@ -127,6 +146,19 @@ docker run -d \
 * `-e MYSQL_ROOT_PASSWORD=123` 是设置 MySQL 数据库的 root 用户的密码为 123。
 * `mysql` 是指定要运行的镜像名称。
 
+## Docker 相关配置
+
+设置 Docker 服务自启动
+
+```shell
+systemctl enable docker.service
+```
+
+设置 Docker 容器自启动
+
+```shell
+docker update --restart=always [container-id]
+```
 
 ## Docker Compose
 

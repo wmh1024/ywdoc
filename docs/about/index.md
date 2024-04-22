@@ -43,6 +43,14 @@ const members = [
       { icon: 'github', link: 'https://github.com/smg1205' },
     ]
   },
+  {
+    avatar: 'https://www.github.com/sdadgz.png',
+    name: 'sdadgz',
+    title: 'Creator',
+    links: [
+      { icon: 'github', link: 'https://github.com/sdadgz' },
+    ]
+  },
 ]
 </script>
 
