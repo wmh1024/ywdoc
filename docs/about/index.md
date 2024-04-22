@@ -22,7 +22,7 @@ const members = [
   {
     avatar: 'https://www.github.com/ljx619.png',
     name: 'ljx619',
-    title: 'Creator',
+    title: 'Developer',
     links: [
       { icon: 'github', link: 'https://github.com/ljx619' },
     ]
