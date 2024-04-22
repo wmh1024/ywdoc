@@ -2,7 +2,6 @@ import deploySidebar from './deploySidebar'
 import middlewareSidebar from './middlewareSidebar'
 import devSidebar from './devSidebar'
 import linuxSidebar from './linuxSidebar'
-import aboutSidebar from './aboutSidebar'
 
 export default {
     base: '/',
@@ -25,7 +24,6 @@ export default {
             '/middleware/': middlewareSidebar,
             '/dev/': devSidebar,
             '/linux/': linuxSidebar,
-            '/about/': aboutSidebar
         },
         socialLinks: [
             { icon: 'github', link: 'https://github.com/wmh1024/yunweidocs' }
