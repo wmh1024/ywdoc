@@ -12,7 +12,7 @@ import {
 
 const members = [
   {
-    avatar: 'https://www.github.com/wmh1024.png',
+    avatar: 'https://ywdoc-1306153177.cos.ap-shanghai.myqcloud.com/2024/04/22/662659ee0d358.jpg',
     name: 'wmh',
     title: 'Creator',
     links: [
@@ -28,7 +28,7 @@ const members = [
     ]
   },
   {
-    avatar: 'https://www.github.com/lihuibear4.png',
+    avatar: 'https://ywdoc-1306153177.cos.ap-shanghai.myqcloud.com/2024/04/22/66265a14d142f.jpg',
     name: 'lihuibear4',
     title: 'Developer',
     links: [
@@ -36,7 +36,7 @@ const members = [
     ]
   },
   {
-    avatar: 'https://www.github.com/smg1205.png',
+    avatar: 'https://ywdoc-1306153177.cos.ap-shanghai.myqcloud.com/2024/04/22/66265a3253243.jpg',
     name: 'smg1205',
     title: 'Developer',
     links: [
@@ -44,15 +44,24 @@ const members = [
     ]
   },
   {
-    avatar: 'https://www.github.com/sdadgz.png',
+    avatar: 'https://ywdoc-1306153177.cos.ap-shanghai.myqcloud.com/2024/04/22/66265a4fb0d17.jpg',
     name: 'sdadgz',
     title: 'Developer',
     links: [
       { icon: 'github', link: 'https://github.com/sdadgz' },
     ]
   },
+  {
+    avatar: 'https://www.github.com/Shaogxhaha.png',
+    name: 'xionger',
+    title: 'Developer',
+    links: [
+      { icon: 'github', link: 'https://github.com/Shaogxhaha' },
+    ]
+  },
 ];
 
+// 暂未启用
 const Contributors = [
   {
     avatar: 'https://www.github.com/Shaogxhaha.png',
@@ -86,7 +95,7 @@ const Sponsors = [
     size="small"
     :members="members"
   />
- <VPTeamPageTitle>
+ <!--<VPTeamPageTitle>
     <template #title>
       贡献者
     </template>
@@ -98,7 +107,7 @@ const Sponsors = [
     size="small"
     :members="Contributors"
   />
-<!--<VPTeamPageTitle>
+<VPTeamPageTitle>
     <template #title>
       赞助者
     </template>
