@@ -12,6 +12,7 @@ export default {
     themeConfig: {
         siteTitle: '运维文档',
         logo: '/logo.png',
+        i18nRouting: false,
         nav: [
             { text: '部署', link: '/deploy/', activeMatch: '/deploy/' },
             { text: '中间件', link: '/middleware/', activeMatch: '/middleware/' },
@@ -32,7 +33,26 @@ export default {
         footer: {
             message: 'Released under the MIT License.',
             copyright: 'Copyright © 2024'
-        }
+        },
+        //侧边栏文字更改(移动端)
+        sidebarMenuLabel: '目录',
+        //返回顶部文字修改(移动端)
+        returnToTopLabel: '返回顶部',
+
+        // 编辑本页
+        editLink: {
+            pattern: 'https://github.com/wmh1024/yunweidocs/edit/main/docs/:path',
+            text: '在GitHub编辑本页'
+        },
+        //自定义上下页名
+        docFooter: {
+            prev: '上一页',
+            next: '下一页'
+        },
+        //手机端深浅模式文字修改
+        darkModeSwitchLabel: '主题',
+        lightModeSwitchTitle: '切换到浅色模式',
+        darkModeSwitchTitle: '切换到深色模式'
     },
     head: [
         [

@@ -1,8 +1,8 @@
 <div align="center">
 
-![chatnio](/docs/public/favicon.ico)
+![yunweidocs](/docs/public/favicon.ico)
 
-# [运维文档](http://docs.wmhwiki.cn/)
+# [运维文档](https://ywdoc.cn/)
 
 🚀 **让安装、部署更简单**
 
