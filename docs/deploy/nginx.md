@@ -18,6 +18,19 @@ location / {
 
 ### Vue项目打包
 
+:::tip 未安装 Node.js 和 npm?
+前往：安装npm
+:::
+
+使用 npm 安装相关依赖
+
+```shell
+npm install
+yarn
+```
+
+将项目打包
+
 ```shell
 npm run build
 ```

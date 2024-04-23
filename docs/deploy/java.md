@@ -89,13 +89,13 @@ maven package
 在启动项目时传入环境变量，使用`prod`环境配置。
 
 ```shell
-java -jar .\backennd.jar --spring.profiles.active=prod
+java -jar ./backennd.jar --spring.profiles.active=prod
 ```
 
 后台运行
 
 ```shell
-nohup java -jar .\backend.jar --spring.profiles.active=prod &
+nohup java -jar ./backend.jar --spring.profiles.active=prod &
 ```
 
 ### idea中将Java项目打包成jar包
