@@ -97,3 +97,21 @@ java -jar .\backennd.jar --spring.profiles.active=prod
 ```shell
 nohup java -jar .\backend.jar --spring.profiles.active=prod &
 ```
+
+### idea中将Java项目打包成jar包
+
+点击idea中Maven按钮
+
+<img src="https://ywdoc-1306153177.cos.ap-shanghai.myqcloud.com/2024/04/23/66276ed9045d7.png" alt="image-20240423161917162" style="zoom:150%;" />
+
+依次点击项目名 -> Lifecycle -> package
+
+<img src="https://ywdoc-1306153177.cos.ap-shanghai.myqcloud.com/2024/04/23/66277031c7d3e.png" alt="ywdoc" style="zoom: 200%;" />
+
+查看控制台，查看打包是否成功
+
+jar包存放的地址一般就是项目中target文件夹
+
+![ywdoc](https://ywdoc-1306153177.cos.ap-shanghai.myqcloud.com/2024/04/23/6627725297fff.jpg)
+
+接下来部署你的项目吧
