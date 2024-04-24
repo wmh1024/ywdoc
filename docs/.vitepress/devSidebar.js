@@ -2,22 +2,32 @@ const commonPath = '/dev';
 
 export default [
     {
-        text: 'section 1',
+        text: 'Node.js',
         collapsible: true,
         collapsed: false,
         items: [
-            // This shows `/guide/index.md` page.
-            { text: 'a', link: `${commonPath}/a.md` }, // /guide/index.md
-            { text: 'b', link: `${commonPath}/b.md` }, // /guide/one.md
+            { text: 'Node.js', link: `${commonPath}/nodejs.md` },
+            { text: 'nvm', link: `${commonPath}/nvm.md` },
         ]
     },
     {
-        text: 'section 2',
+        text: 'Java',
         collapsible: true,
         collapsed: false,
         items: [
-            { text: 'c', link: `${commonPath}/c.md` },
-            { text: 'd', link: `${commonPath}/d.md` } // /guide/one.md
+            { text: 'JavaSE', link: `${commonPath}/javase.md` },
+            { text: 'JavaEE', link: `${commonPath}/javaee.md` },
+            { text: 'SpringBoot', link: `${commonPath}/springboot.md` },
+            { text: 'SpringCloud', link: `${commonPath}/springcloud.md` }
+        ]
+    },{
+        text: 'Python',
+        collapsible: true,
+        collapsed: false,
+        items: [
+            { text: 'Python', link: `${commonPath}/python.md` },
+            { text: 'Anaconda', link: `${commonPath}/anaconda.md` },
+            { text: 'PyTorch', link: `${commonPath}/pytorch.md` },
         ]
     }
 ]

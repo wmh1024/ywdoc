@@ -2,6 +2,7 @@ import deploySidebar from './deploySidebar'
 import middlewareSidebar from './middlewareSidebar'
 import devSidebar from './devSidebar'
 import linuxSidebar from './linuxSidebar'
+import winserverSidebar from './winserverSidebar'
 
 export default {
     base: '/',
@@ -49,14 +50,21 @@ export default {
             { text: '部署', link: '/deploy/', activeMatch: '/deploy/' },
             { text: '中间件', link: '/middleware/', activeMatch: '/middleware/' },
             { text: '开发环境', link: '/dev/', activeMatch: '/dev/' },
-            { text: 'Linux', link: '/linux/', activeMatch: '/linux/' },
+            {
+                text: '服务器',
+                items: [
+                    { text: 'Linux', link: '/linux/', activeMatch: '/linux/' },
+                    { text: 'Windows Server', link: '/winserver/', activeMatch: '/winserver/' }
+                ]
+            },
             { text: '关于', link: '/about/', activeMatch: '/about/' }
         ],
         sidebar: {
             '/deploy/': deploySidebar,
             '/middleware/': middlewareSidebar,
             '/dev/': devSidebar,
-            '/linux/': linuxSidebar
+            '/linux/': linuxSidebar,
+            '/winserver/': winserverSidebar
         },
         socialLinks: [
             { icon: 'github', link: 'https://github.com/wmh1024/yunweidocs' }
