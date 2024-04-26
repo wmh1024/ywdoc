@@ -12,7 +12,6 @@
 
 ```shell
 npm install
-yarn
 ```
 
 将项目打包
@@ -34,5 +33,71 @@ Vue使用 history 模式路由（/login），会导致404错误。
 ```nginx
 location / {
     try_files $uri $uri/ /index.html;
+}
+```
+
+
+## 反向代理
+
+### 什么是反向代理
+
+// todo
+
+### 反向代理配置
+
+```nginx
+location ^~ / {
+    add_header Access-Control-Allow-Origin *;
+    add_header Access-Control-Allow-Methods "GET, POST, PUT, DELETE, OPTIONS";
+    add_header Access-Control-Allow-Headers "Content-Type, Authorization";
+    proxy_pass https://ywdoc.cn;
+}
+```
+
+## 重定向
+
+### 什么是重定向
+
+* 301 永久性重定向：永久移动到新的URL上，搜索引擎会更新索引。
+* 302 临时性重定向：暂时移动到新的URL上，搜索引擎不会更新索引。
+
+### 重定向配置
+
+301 永久性重定向
+
+```nginx
+if ($host ~ '^123.com'){
+    return 301 https://ywdoc.cn;
+}
+```
+
+302 临时性重定向
+
+```nginx
+if ($host ~ '^123.com'){
+    return 302 https://ywdoc.cn;
+}
+```
+## 跨域
+
+### 配置允许跨域
+
+```nginx
+location ^~ /api/ {
+    proxy_pass http://127.0.0.1:8080/api/;
+    add_header 'Access-Control-Allow-Origin' $http_origin;
+    add_header 'Access-Control-Allow-Credentials' 'true';
+    add_header Access-Control-Allow-Methods 'GET, POST, OPTIONS';
+    add_header Access-Control-Allow-Headers '*';
+    if ($request_method = 'OPTIONS') {
+        add_header 'Access-Control-Allow-Credentials' 'true';
+        add_header 'Access-Control-Allow-Origin' $http_origin;
+        add_header 'Access-Control-Allow-Methods' 'GET, POST, OPTIONS';
+        add_header 'Access-Control-Allow-Headers' 'DNT,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Range';
+        add_header 'Access-Control-Max-Age' 1728000;
+        add_header 'Content-Type' 'text/plain; charset=utf-8';
+        add_header 'Content-Length' 0;
+        return 204;
+    }
 }
 ```

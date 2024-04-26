@@ -12,25 +12,7 @@
 
 让Nginx代理服务器告诉浏览器：允许跨域（返回 cross-origin-allow 响应头）
 
-```nginx
-location ^~ /api/ {
-    proxy_pass http://127.0.0.1:8080/api/;
-    add_header 'Access-Control-Allow-Origin' $http_origin;
-    add_header 'Access-Control-Allow-Credentials' 'true';
-    add_header Access-Control-Allow-Methods 'GET, POST, OPTIONS';
-    add_header Access-Control-Allow-Headers '*';
-    if ($request_method = 'OPTIONS') {
-        add_header 'Access-Control-Allow-Credentials' 'true';
-        add_header 'Access-Control-Allow-Origin' $http_origin;
-        add_header 'Access-Control-Allow-Methods' 'GET, POST, OPTIONS';
-        add_header 'Access-Control-Allow-Headers' 'DNT,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Range';
-        add_header 'Access-Control-Max-Age' 1728000;
-        add_header 'Content-Type' 'text/plain; charset=utf-8';
-        add_header 'Content-Length' 0;
-        return 204;
-    }
-}
-```
+> [配置允许跨域 - nginx](nginx.md#配置允许跨域)
 
 #### 修改后端服务
 
@@ -66,11 +48,11 @@ public class GlobalCorsConfig {
 
 在 SpringBoot 项目中，通过多个 `application-xxx.yaml` 的方式配置多环境。针对不同环境做不同的配置。
 
-通过 application-dev.yml 与 application-prod.yml 区分环境
+通过 application-dev.yml 与 application-prod.yml 区分环境：
 
-* 数据库、缓存地址
-* 端口号
-* content path
+1. 数据库、缓存地址 
+2. 端口号 
+3. content path
 
 ### maven 打包项目
 
