@@ -24,7 +24,8 @@ export default [
         collapsed: false,
         items: [
             { text: 'Docker', link: `${commonPath}/docker.md` },
-            { text: '容器平台', link: `${commonPath}/container.md` } // /guide/one.md
+            { text: '容器平台', link: `${commonPath}/container.md` }, // /guide/one.md
+            { text: 'Vercel', link: `${commonPath}/vercel.md`}
         ]
     }
 ]

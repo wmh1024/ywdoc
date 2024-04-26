@@ -2,12 +2,12 @@ const commonPath = '/linux';
 
 export default [
     {
-        text: 'section 1',
+        text: 'Linux',
         collapsible: true,
         collapsed: false,
         items: [
             // This shows `/guide/index.md` page.
-            { text: 'a', link: `${commonPath}/a.md` }, // /guide/index.md
+            { text: 'Linux的安装', link: `${commonPath}/Linux.md` }, // /guide/index.md
             { text: 'b', link: `${commonPath}/b.md` }, // /guide/one.md
         ]
     },
