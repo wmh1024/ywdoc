@@ -1,3 +1,0 @@
-# C
-
-smh test
