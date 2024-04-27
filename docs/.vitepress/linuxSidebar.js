@@ -7,7 +7,7 @@ export default [
         collapsed: false,
         items: [
             // This shows `/guide/index.md` page.
-            { text: 'Linux的安装', link: `${commonPath}/Linux.md` }, // /guide/index.md
+            { text: 'Linux的安装', link: `${commonPath}/linux.md` }, // /guide/index.md
             { text: 'b', link: `${commonPath}/b.md` }, // /guide/one.md
         ]
     },
