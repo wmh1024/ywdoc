@@ -4,6 +4,7 @@ import devSidebar from './devSidebar'
 import linuxSidebar from './linuxSidebar'
 import winserverSidebar from './winserverSidebar'
 
+import timeline from "vitepress-markdown-timeline";
 export default {
     base: '/',
     lang: 'zh-CN',
@@ -98,8 +99,16 @@ export default {
             level: [2, 3],
             label: '目录'
         }
-    }
-    ,
+    },
+    markdown: {
+        //行号显示
+        lineNumbers: true,
+
+        //时间线
+        config: (md) => {
+            md.use(timeline);
+        },
+    },
     head: [
         [
             'script',
@@ -111,4 +120,5 @@ export default {
             `LA.init({ id: "3IBN50LSNvZUP11Q", ck: "3IBN50LSNvZUP11Q" })`
         ]
     ]
+
 }

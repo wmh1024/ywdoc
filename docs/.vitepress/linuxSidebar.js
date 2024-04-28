@@ -26,5 +26,24 @@ export default [
             { text: '系统管理', link: `${commonPath}/base8.md` },
 
         ]
-    }
+    },
+    {
+        text: '软件',
+        collapsible: true,
+        collapsed: false,
+        items: [
+            { text: 'SSH', link: `${commonPath}/SSH.md` },
+            { text: 'vim', link: `${commonPath}/vim.md` }
+        ]
+    },
+    {
+        text: '面板',
+        collapsible: true,
+        collapsed: false,
+        items: [
+            { text: '宝塔面板', link: `${commonPath}/bt.md` },
+            { text: '1Panel', link: `${commonPath}/1Panel.md` }
+        ]
+    },
+
 ]

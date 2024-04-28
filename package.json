@@ -13,6 +13,10 @@
   "devDependencies": {
     "sass": "^1.75.0",
     "vitepress": "^1.0.0-alpha.4",
-    "vue": "^3.4.23"
+    "vue": "^3.4.25"
+  },
+  "dependencies": {
+    "less": "^4.2.0",
+    "vitepress-markdown-timeline": "^1.2.1"
   }
 }
