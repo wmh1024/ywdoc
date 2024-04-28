@@ -12,12 +12,19 @@ export default [
         ]
     },
     {
-        text: 'section 2',
+        text: '基础操作',
         collapsible: true,
         collapsed: false,
         items: [
-            { text: 'c', link: `${commonPath}/c.md` },
-            { text: 'd', link: `${commonPath}/d.md` } // /guide/one.md
+            { text: '基础知识', link: `${commonPath}/base1.md` },
+            { text: '基础操作', link: `${commonPath}/base2.md` },
+            { text: '目录操作', link: `${commonPath}/base3.md` },
+            { text: '文件操作', link: `${commonPath}/base4.md` },
+            { text: '文件权限', link: `${commonPath}/base5.md` },
+            { text: '打包与解压', link: `${commonPath}/base6.md` },
+            { text: '其他常用命令', link: `${commonPath}/base7.md` },
+            { text: '系统管理', link: `${commonPath}/base8.md` },
+
         ]
     }
 ]
