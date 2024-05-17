@@ -28,24 +28,12 @@ nvm 是一个 nodejs 的版本管理工具。通过它可以**方便地**安装�
 
 ### nvm 配置（配置路径和下载源）
 
-安装完nvm后先不要着急安装node。
+安装完nvm后需配置镜像源
 
-找到nvm安装路径 -> 找到 settings.txt 文件 -> 配置下载源
-![](https://image-1319612571.cos.ap-shanghai.myqcloud.com/202405091906894.png)
-
-以下为最新镜像源:
-
-::: code-group
-
-```txt
-#配置node镜像： 
-node_mirror: https://npmmirror.com/mirrors/node/`
-#配置npm镜像：`
-npm_mirror: https://npmmirror.com/mirrors/npm/
+```shell
+nvm node_mirror https://npmmirror.com/mirrors/node/
+nvm npm_mirror https://npmmirror.com/mirrors/npm/
 ```
-
-:::
-![image-20240303220853542](https://image-1319612571.cos.ap-shanghai.myqcloud.com/202403032208593.png)
 
 ### 使用nvm安装node
 

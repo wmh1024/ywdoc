@@ -112,34 +112,32 @@ http {
 
 ```nginx
 server{
-        listen 8083;
+    listen 8083;
 	server_name localhost;
-	location /{ 
+	location / { 
 		root html;
 		index show.html;
 	}
-    }
-
+}
 ```
 
 这时候访问本机的8083端口就可以看到show.html，证明静态资源部署完成了
 
-### 轮询和权值
+### 轮询和权值 (负载均衡)
 
 ```nginx
 upstream myserver{
-		server localhost:8088;
-		server localhost:8083;
-	}
-	
-	server{
-		listen 8004;
-		server_name localhost;
-		location /{
-			proxy_pass http://myserver;
-		}
-	}
+    server localhost:8088;
+    server localhost:8083;
+}
 
+server{
+    listen 8004;
+    server_name localhost;
+    location / {
+        proxy_pass http://myserver;
+    }
+}
 ```
 
 让http://myserver监听8004端口，并且转发到8088或者8083，这里没有设置权值也就是轮着来访问这两个页面
@@ -148,17 +146,17 @@ upstream myserver{
 
 ```nginx
 upstream myserver{
-		server localhost:8088 weight=10;
-		server localhost:8083 weight=2;
-	}
-	
-	server{
-		listen 8004;
-		server_name localhost;
-		location /{
-			proxy_pass http://myserver;
-		}
-	}
+    server localhost:8088 weight=10;
+    server localhost:8083 weight=2;
+}
+
+server{
+    listen 8004;
+    server_name localhost;
+    location / {
+        proxy_pass http://myserver;
+    }
+}
 ```
 
 

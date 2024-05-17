@@ -1,10 +1,8 @@
-# 在Linux中安装MySQL数据库
+# MySQL
 
-MySQL是一种开放源代码的关系型数据库管理系统（RDBMS），MySQL数据库系统使用结构化查询语言（SQL）进行数据库管理，适用于Web应用开发、企业应用程序、数据分析和报告、软件开发和测试等多种场景下的数据存储和管理需求。本文介绍如何在Linux中部署MySQL数据库。
+## 安装MySQL
 
-## 部署MySQL数据库(CentOS 7.X)
-
-### 步骤一：安装MySQL
+### 安装
 
 1. 运行以下命令，更新 yum 源。
    本操作以下载 MySQL 8.0 版本为例，如果想下载其他版本的 MySQL，请参见 [MySQL官方文档](https://dev.mysql.com/doc/)
@@ -33,7 +31,7 @@ MySQL是一种开放源代码的关系型数据库管理系统（RDBMS），MySQ
 
 ---
 
-### 步骤二：配置 MySQL
+### 配置 MySQL
 
 1. 运行以下命令，启动并设置开机自启动 MySQL 服务。
 
@@ -144,11 +142,10 @@ MySQL是一种开放源代码的关系型数据库管理系统（RDBMS），MySQ
 
    安全性配置的更多信息，请参见[MySQL官方文档](https://dev.mysql.com/doc/refman/5.7/en/mysql-secure-installation.html)。
 
----
 
-### 步骤三：远程访问 MySQL 数据库
+### 配置允许远程访问
 
-建议您使用非root账号远程登录MySQL数据库。下文示例中，将创建新的MySQL账号，用于远程访问MySQL。
+建议使用非root账号远程登录MySQL数据库。将创建新的MySQL账号，用于远程访问MySQL。
 
 1. 运行以下命令后，输入root用户的密码登录MySQL。
 
@@ -161,15 +158,12 @@ MySQL是一种开放源代码的关系型数据库管理系统（RDBMS），MySQ
 2. 依次运行以下命令，创建远程登录MySQL的账号，并允许远程主机使用该账号访问MySQL。
    本示例账号为`demo`、密码为`Demo@123****`。
 
-   > 重要 实际创建账号时，需将示例密码`Demo@123****`更换为符合要求的密码，并妥善保存。密码要求：长度为8至30个字符，必须同时包含大小写英文		 母、数字和特殊符号。可以使用以下特殊符号：
-   > 		 `()`` ~!@#$%^&*-+=|{}[]:;‘<>,.?/`
-
    ```shell
-   #创建数据库用户dmsTest,并授予远程连接权限。
+   # 创建数据库用户dmsTest,并授予远程连接权限。
    create user 'demo'@'%' identified by 'Demo@123****'; 
-   #为dmsTest用户授权数据库所有权限。
+   # 为dmsTest用户授权数据库所有权限。
    grant all privileges on *.* to 'demo'@'%'; 
-   #刷新权限。
+   # 刷新权限。
    flush privileges; 
    ```
 
@@ -180,8 +174,4 @@ MySQL是一种开放源代码的关系型数据库管理系统（RDBMS），MySQ
    ```
 
 4. 使用`demo`账号远程登录 MySQL
-
-   - 您可以通过MySQL客户端远程登录MySQL进行测试。例如：MySQL Workbench、Navicat。
-
----
 

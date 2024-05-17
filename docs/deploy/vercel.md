@@ -8,9 +8,17 @@
 
 ## vercel的使用
 
-```html
-<a href="https://vercel.com">vercel的官网</a>
-```
+<div class="linkcard">
+  <a href="https://vercel.com" target="_blank">
+    <p class="description">vercel<br><span>https://vercel.com</span></p>
+    <div class="logo">
+        <img alt="Logo" width="70px" height="70px" src="../public/vercel.ico" />
+    </div>
+  </a>
+</div>
+
+
+
 我这里使用了Github授权登录的vercel，并且在vercel中选择要部署的仓库
 
 
